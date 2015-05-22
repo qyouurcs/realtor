@@ -72,8 +72,8 @@ def main(layer_nums, data_dir, model_dir, val_fn, **kwargs):
     )
     
     layer_str = sys.argv[1].replace(',','-')
-    val_base = os.path.splitext(os.path.basename(val_fn))[0]
-    save_fn = os.path.join(model_dir, 'models-{0}-{1}-{2}-{3}-{4}-{5}.pkl'.format(layer_str, batch_size_v, val_base, hidden_l1, l1, l2))
+    #val_base = os.path.splitext(os.path.basename(val_fn))[0]
+    save_fn = os.path.join(model_dir, 'models-{0}-{1}-{2}-{3}-{4}.pkl'.format(layer_str, batch_size_v, hidden_l1, l1, l2))
     print save_fn
 
     e.train(
