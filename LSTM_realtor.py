@@ -44,7 +44,7 @@ def main(layer_nums, data_dir, model_dir, val_fn, **kwargs):
         return [ data['batch_x'], data['batch_y'] ]
         
     def batch_val():
-        data = np.load(os.path.join(data_dir, 'batch-0.npz'))
+        data = np.load(val_fn)
         return [ data['batch_x'], data['batch_y'] ]
     
     def fea_num():
