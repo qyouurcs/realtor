@@ -89,20 +89,33 @@ if __name__ == '__main__':
     # Now we have all the needed info.
     if pred_dir[-1] == '/':
         pred_dir = pred_dir[0:-1]
-
+    dict_pred_ys_all = {}
+    dict_y_all = {}
     with open(save_fn,'w') as fid:
         for root, subdirs, fns in os.walk(pred_dir):
             for fn in fns:
                 dict_pred_ys, dict_y = pred_one_fn(os.path.join(root, fn))
                 for node in dict_pred_ys:
-                    pred_y = dict_pred_ys[node]
-                    avg = np.mean(np.asarray(pred_y))
-                    var = np.var(np.asarray(pred_y))
-                    print >> fid, node, dict_y[node], nearest(pred_y, dict_y[node]), avg, var,
-                    for y in pred_y:
-                        print >> fid, y,
-                    print >>fid
+                    if node not in dict_pred_ys_all:
+                        dict_pred_ys_all[node] = []
+                    dict_pred_ys_all[node] = dict_pred_ys_all[node] + dict_pred_ys[node]
+
+                for node in dict_y:
+                    if node not in dict_y_all:
+                        dict_y_all[node] = dict_y[node]
+                    else:
+                        if dict_y_all[node] != dict_y[node]:
+                            print 'Error! should not happen'
+
             #scipy.io.savemat(save_fn, dict_save)
+        for node in dict_pred_ys_all:
+            pred_y = dict_pred_ys_all[node]
+            avg = np.mean(np.asarray(pred_y))
+            var = np.var(np.asarray(pred_y))
+            print >> fid, node, dict_y_all[node], nearest(pred_y, dict_y_all[node]), avg, var,
+            for y in pred_y:
+                print >> fid, y,
+            print >>fid
 
     print 'Done with {0}'.format(save_fn)
 

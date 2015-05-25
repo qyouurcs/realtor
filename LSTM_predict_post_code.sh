@@ -15,5 +15,5 @@ do
     echo $model
     params_conf=`echo $model | awk -F"-" '{layers=$2; for( i = 3; i < NF - 3; i++) layers = layers","$i; print layers;}'`
     model_fn=$model_dir/$model
-    python LSTM_predict.py $params_conf $model_fn $testing_dir
+    python LSTM_predict_post_code.py $params_conf $model_fn $testing_dir
 done
