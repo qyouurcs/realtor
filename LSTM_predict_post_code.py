@@ -21,7 +21,7 @@ if __name__ == '__main__':
     pred_dir = sys.argv[3]
 
     def fea_num():
-        data = np.load(os.path.join(pred_dir + 'batch-0.npz'))
+        data = np.load(os.path.join(pred_dir,'batch-0.npz'))
         return data['fea_num']
 
     def layer(n):
@@ -41,7 +41,7 @@ if __name__ == '__main__':
 
     e = e.load(model_fn)
 
-    def pred_one_fn(pred_fn)
+    def pred_one_fn(pred_fn):
         data = np.load(pred_fn)
 
         pred_x = data['batch_x']
@@ -93,7 +93,7 @@ if __name__ == '__main__':
     with open(save_fn,'w') as fid:
         for root, subdirs, fns in os.walk(pred_dir):
             for fn in fns:
-                dict_pred_ys, dict_y = pred_fn(os.path.join(root, fn))
+                dict_pred_ys, dict_y = pred_one_fn(os.path.join(root, fn))
                 for node in dict_pred_ys:
                     pred_y = dict_pred_ys[node]
                     avg = np.mean(np.asarray(pred_y))

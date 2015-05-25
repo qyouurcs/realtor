@@ -32,13 +32,14 @@ if __name__ == '__main__':
     
     # load id to dictionary dict_id
     dict_id = {}
+    dict_id_all = {}
     idx = 0
     dict_price = {}
     with open(fn_id_train,'r') as fid:
         for aline in fid:
             aline = aline.strip()
             parts = aline.split()
-            dict_id[parts[0]] = idx
+            dict_id_all[parts[0]] = idx
             idx += 1
             dict_price[parts[0]] = float(parts[1]) - float(parts[2])
     with open(fn_id_val, 'r') as fid:
@@ -46,6 +47,7 @@ if __name__ == '__main__':
             aline = aline.strip()
             parts = aline.split()
             dict_id[parts[0]] = idx
+            dict_id_all[parts[0]] = idx
             dict_price[parts[0]] = float(parts[1]) - float(parts[2])
             idx += 1
 
@@ -63,12 +65,12 @@ if __name__ == '__main__':
                 sys.exit()
             fea_num = len(fea)
 
-    numpy_fea = np.zeros((len(dict_id), fea_num))
-    numpy_label = np.zeros((len(dict_id), 1))
+    numpy_fea = np.zeros((idx, fea_num))
+    numpy_label = np.zeros((idx, 1))
 
-    for house in dict_id:
-        numpy_fea[dict_id[house], :] = np.asarray(dict_fea[house])
-        numpy_label[dict_id[house], 0] = dict_price[house]
+    for house in dict_id_all:
+        numpy_fea[dict_id_all[house], :] = np.asarray(dict_fea[house])
+        numpy_label[dict_id_all[house], 0] = dict_price[house]
 
     # Now, let's do the next job. 
     T = -1
@@ -104,5 +106,5 @@ if __name__ == '__main__':
         batch_fn = os.path.join(save_dir,'batch-{0}'.format(batch_idx))
         batch_path = list_path[batch_idx * batch_size : (batch_idx + 1 ) * batch_size]
 
-        np.savez( batch_fn, batch_x = batch_x, batch_y = batch_y, batch_idx = batch_idx, fea_num=fea_num, batch_size = batch_size, batch_path = batch_path)
+        np.savez( batch_fn, batch_x = batch_x, batch_y = batch_y, batch_idx = batch_idx, fea_num=fea_num, batch_size = batch_size, batch_path = batch_path, test_id=np.asarray(dict_id.values()))
         print 'Done with batch {0}'.format(batch_fn)
