@@ -21,7 +21,6 @@ if __name__ == '__main__':
     fn_id_train = cf.get('INPUT', 'fn_id_train')
     fn_id_val = cf.get('INPUT', 'fn_id_val')
 
-    fn_price = cf.get('INPUT', 'fn_price')
     fn_fea = cf.get('INPUT', 'fn_fea')
     fn_path = cf.get('INPUT', 'fn_path')
     batch_size = int(cf.get('INPUT', 'batch_size'))
