@@ -18,7 +18,9 @@ if __name__ == '__main__':
         sys.exit()
 
     cf.read(sys.argv[1])
-    fn_id = cf.get('INPUT', 'fn_id')
+    fn_id_train = cf.get('INPUT', 'fn_id_train')
+    fn_id_val = cf.get('INPUT', 'fn_id_val')
+
     fn_price = cf.get('INPUT', 'fn_price')
     fn_fea = cf.get('INPUT', 'fn_fea')
     fn_path = cf.get('INPUT', 'fn_path')
@@ -32,20 +34,21 @@ if __name__ == '__main__':
     # load id to dictionary dict_id
     dict_id = {}
     idx = 0
-    with open(fn_id,'r') as fid:
+    dict_price = {}
+    with open(fn_id_train,'r') as fid:
         for aline in fid:
             aline = aline.strip()
             parts = aline.split()
             dict_id[parts[0]] = idx
             idx += 1
-
-    dict_price = {}
-    with open(fn_price,'r') as fid:
+            dict_price[parts[0]] = float(parts[1]) - float(parts[2])
+    with open(fn_id_val, 'r') as fid:
         for aline in fid:
             aline = aline.strip()
             parts = aline.split()
-            price = parts[1].replace(',','')
-            dict_price[parts[0]] =  float(price)
+            dict_id[parts[0]] = idx
+            dict_price[parts[0]] = float(parts[1]) - float(parts[2])
+            idx += 1
 
     T = -1
     fea_num = -1
@@ -86,6 +89,7 @@ if __name__ == '__main__':
     batch_y = np.zeros( (T, batch_size, 1), dtype = np.float32)
 
     batch_num = int(math.floor( len(list_path) / float(batch_size))) # just discard the last paths.
+    # Only one batch for validation.
     for batch_idx in xrange(batch_num):
         idx = list_path[batch_idx * batch_size : (batch_idx + 1 ) * batch_size]
 

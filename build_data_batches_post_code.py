@@ -45,7 +45,8 @@ if __name__ == '__main__':
             aline = aline.strip()
             parts = aline.split()
             price = parts[1].replace(',','')
-            dict_price[parts[0]] =  float(price)
+            avg_price = parts[2].replace(',','')
+            dict_price[parts[0]] =  float(price) - float(avg_price)
 
     T = -1
     fea_num = -1
