@@ -10,8 +10,8 @@ import os
 
 
 if __name__ == '__main__':
-    if len(sys.argv) < 4:
-        print 'Usage: {0} <comma-sparated-numbers> <saved_model> <pred_data>'.format(sys.argv[0])
+    if len(sys.argv) < 5:
+        print 'Usage: {0} <comma-sparated-numbers> <saved_model> <pred_dir> <save_dir>'.format(sys.argv[0])
         sys.exit()
 
     layer_nums = sys.argv[1].split(',')
@@ -19,6 +19,10 @@ if __name__ == '__main__':
 
     model_fn = sys.argv[2]
     pred_dir = sys.argv[3]
+    save_dir = sys.argv[4]
+    
+    if not os.path.isdir(save_dir):
+        os.makedirs(save_dir)
 
     def fea_num():
         data = np.load(os.path.join(pred_dir,'batch-0.npz'))
@@ -89,7 +93,9 @@ if __name__ == '__main__':
     if pred_dir[-1] == '/':
         pred_dir = pred_dir[0:-1]
 
-    save_fn = pred_dir + '_' + os.path.splitext(os.path.basename(model_fn))[0] + '_pred.txt'
+    save_fn = pred_dir.replace('/','') + '_' + os.path.splitext(os.path.basename(model_fn))[0] + '_pred.txt'
+    save_fn = os.path.join(save_dir, save_fn)
+
     dict_pred_ys_all = {}
     dict_y_all = {}
     with open(save_fn,'w') as fid:

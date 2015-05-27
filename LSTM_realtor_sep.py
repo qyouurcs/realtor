@@ -20,7 +20,7 @@ logging = climate.get_logger('lstm-chime')
 climate.enable_default_logging()
 
 def main(layer_nums, data_dir, model_dir, val_fn, sep_data_dir, sep_val_fn, **kwargs):
-
+    
     layer_nums = [ int(num) for num in layer_nums ]
 
     hidden_l1 = None
