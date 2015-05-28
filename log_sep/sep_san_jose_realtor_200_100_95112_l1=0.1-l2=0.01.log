@@ -1,0 +1,241 @@
+I 2015-05-27 15:54:42 theanets.layers:465 layer in: out:0 -> 1000, linear, 0 parameters
+I 2015-05-27 15:54:42 theanets.layers:465 layer bdlstm1_fw: in.out:1000 -> 100, logistic, 440700 parameters
+I 2015-05-27 15:54:42 theanets.layers:465 layer bdlstm1_bw: in.out:1000 -> 100, logistic, 440700 parameters
+I 2015-05-27 15:54:42 theanets.layers:465 layer bdlstm1: in.out:1000 -> 200, logistic, 881400 parameters
+I 2015-05-27 15:54:42 theanets.layers:465 layer bdlstm2_fw: bdlstm1.out:200 -> 50, logistic, 50350 parameters
+I 2015-05-27 15:54:42 theanets.layers:465 layer bdlstm2_bw: bdlstm1.out:200 -> 50, logistic, 50350 parameters
+I 2015-05-27 15:54:42 theanets.layers:465 layer bdlstm2: bdlstm1.out:200 -> 100, logistic, 100700 parameters
+I 2015-05-27 15:54:42 theanets.layers:465 layer out: bdlstm2.out:100 -> 1, linear, 101 parameters
+I 2015-05-27 15:54:42 theanets.graph:145 network has 982201 total parameters
+models_deep_post_code_sep/95112-models-sep_san_jose_realtor_200_100.conf-1024-None-0.1-0.01.pkl
+I 2015-05-27 15:54:42 theanets.dataset:133 valid: 3 mini-batches from callable
+I 2015-05-27 15:54:42 theanets.dataset:133 train: 30 mini-batches from callable
+I 2015-05-27 15:54:42 theanets.main:87 creating trainer <class 'theanets.trainer.RmsProp'>
+I 2015-05-27 15:54:42 theanets.main:89 --batch_size = 1024
+I 2015-05-27 15:54:42 theanets.main:89 --gradient_clip = 1
+I 2015-05-27 15:54:42 theanets.main:89 --hidden_l1 = None
+I 2015-05-27 15:54:42 theanets.main:89 --learning_rate = 0.001
+I 2015-05-27 15:54:42 theanets.main:89 --train_batches = 30
+I 2015-05-27 15:54:42 theanets.main:89 --valid_batches = 3
+I 2015-05-27 15:54:42 theanets.main:89 --weight_l1 = 0.1
+I 2015-05-27 15:54:42 theanets.main:89 --weight_l2 = 0.01
+I 2015-05-27 15:54:42 theanets.trainer:134 compiling evaluation function
+I 2015-05-27 15:54:54 theanets.trainer:294 compiling RmsProp learning function
+I 2015-05-27 15:57:38 theanets.trainer:168 validation 0 loss=16581.923828 err=14158.867188 *
+I 2015-05-27 15:58:11 theanets.trainer:168 RmsProp 1 loss=14187.468750 err=13144.484375
+I 2015-05-27 15:58:46 theanets.trainer:168 RmsProp 2 loss=13444.142578 err=13178.082031
+I 2015-05-27 15:59:21 theanets.trainer:168 RmsProp 3 loss=13254.279297 err=13104.885742
+I 2015-05-27 15:59:58 theanets.trainer:168 RmsProp 4 loss=13200.732422 err=13061.532227
+I 2015-05-27 16:00:35 theanets.trainer:168 RmsProp 5 loss=13318.291016 err=13179.941406
+I 2015-05-27 16:01:12 theanets.trainer:168 RmsProp 6 loss=13218.837891 err=13079.371094
+I 2015-05-27 16:01:50 theanets.trainer:168 RmsProp 7 loss=13238.105469 err=13099.392578
+I 2015-05-27 16:02:26 theanets.trainer:168 RmsProp 8 loss=13485.516602 err=13347.910156
+I 2015-05-27 16:03:03 theanets.trainer:168 RmsProp 9 loss=13367.935547 err=13229.468750
+I 2015-05-27 16:03:39 theanets.trainer:168 RmsProp 10 loss=13374.978516 err=13236.787109
+I 2015-05-27 16:03:40 theanets.trainer:168 validation 1 loss=14287.690430 err=14156.497070 *
+I 2015-05-27 16:04:16 theanets.trainer:168 RmsProp 11 loss=13308.522461 err=13170.861328
+I 2015-05-27 16:04:53 theanets.trainer:168 RmsProp 12 loss=13254.594727 err=13116.372070
+I 2015-05-27 16:05:30 theanets.trainer:168 RmsProp 13 loss=13383.388672 err=13244.746094
+I 2015-05-27 16:06:06 theanets.trainer:168 RmsProp 14 loss=13449.612305 err=13312.287109
+I 2015-05-27 16:06:43 theanets.trainer:168 RmsProp 15 loss=13341.423828 err=13203.628906
+I 2015-05-27 16:07:18 theanets.trainer:168 RmsProp 16 loss=13305.079102 err=13166.188477
+I 2015-05-27 16:07:54 theanets.trainer:168 RmsProp 17 loss=13286.171875 err=13146.744141
+I 2015-05-27 16:08:30 theanets.trainer:168 RmsProp 18 loss=13349.401367 err=13209.696289
+I 2015-05-27 16:09:06 theanets.trainer:168 RmsProp 19 loss=13339.209961 err=13198.461914
+I 2015-05-27 16:09:43 theanets.trainer:168 RmsProp 20 loss=13338.958984 err=13198.614258
+I 2015-05-27 16:09:43 theanets.trainer:168 validation 2 loss=14299.090820 err=14160.053711
+I 2015-05-27 16:10:19 theanets.trainer:168 RmsProp 21 loss=13298.500977 err=13158.893555
+I 2015-05-27 16:10:55 theanets.trainer:168 RmsProp 22 loss=13359.346680 err=13219.805664
+I 2015-05-27 16:11:30 theanets.trainer:168 RmsProp 23 loss=13239.730469 err=13099.667969
+I 2015-05-27 16:12:06 theanets.trainer:168 RmsProp 24 loss=13327.121094 err=13186.777344
+I 2015-05-27 16:12:43 theanets.trainer:168 RmsProp 25 loss=13302.202148 err=13162.419922
+I 2015-05-27 16:13:21 theanets.trainer:168 RmsProp 26 loss=13454.687500 err=13314.694336
+I 2015-05-27 16:13:57 theanets.trainer:168 RmsProp 27 loss=13293.736328 err=13152.776367
+I 2015-05-27 16:14:34 theanets.trainer:168 RmsProp 28 loss=13376.872070 err=13235.750977
+I 2015-05-27 16:15:11 theanets.trainer:168 RmsProp 29 loss=13423.413086 err=13282.672852
+I 2015-05-27 16:15:48 theanets.trainer:168 RmsProp 30 loss=13363.274414 err=13220.377930
+I 2015-05-27 16:15:48 theanets.trainer:168 validation 3 loss=14300.084961 err=14158.609375
+I 2015-05-27 16:16:25 theanets.trainer:168 RmsProp 31 loss=13375.971680 err=13233.727539
+I 2015-05-27 16:17:01 theanets.trainer:168 RmsProp 32 loss=13315.071289 err=13173.464844
+I 2015-05-27 16:17:39 theanets.trainer:168 RmsProp 33 loss=13224.593750 err=13082.826172
+I 2015-05-27 16:18:16 theanets.trainer:168 RmsProp 34 loss=13375.360352 err=13233.092773
+I 2015-05-27 16:18:53 theanets.trainer:168 RmsProp 35 loss=13391.956055 err=13250.018555
+I 2015-05-27 16:19:30 theanets.trainer:168 RmsProp 36 loss=13336.392578 err=13194.519531
+I 2015-05-27 16:20:07 theanets.trainer:168 RmsProp 37 loss=13260.548828 err=13117.371094
+I 2015-05-27 16:20:44 theanets.trainer:168 RmsProp 38 loss=13360.102539 err=13216.306641
+I 2015-05-27 16:21:21 theanets.trainer:168 RmsProp 39 loss=13364.937500 err=13222.193359
+I 2015-05-27 16:21:58 theanets.trainer:168 RmsProp 40 loss=13401.451172 err=13258.157227
+I 2015-05-27 16:21:59 theanets.trainer:168 validation 4 loss=14301.342773 err=14158.178711
+I 2015-05-27 16:22:36 theanets.trainer:168 RmsProp 41 loss=13332.675781 err=13189.121094
+I 2015-05-27 16:23:13 theanets.trainer:168 RmsProp 42 loss=13261.823242 err=13117.530273
+I 2015-05-27 16:23:49 theanets.trainer:168 RmsProp 43 loss=13319.952148 err=13175.875000
+I 2015-05-27 16:24:26 theanets.trainer:168 RmsProp 44 loss=13329.683594 err=13185.333008
+I 2015-05-27 16:25:04 theanets.trainer:168 RmsProp 45 loss=13326.963867 err=13181.998047
+I 2015-05-27 16:25:41 theanets.trainer:168 RmsProp 46 loss=13292.000977 err=13147.725586
+I 2015-05-27 16:26:18 theanets.trainer:168 RmsProp 47 loss=13258.252930 err=13113.989258
+I 2015-05-27 16:26:57 theanets.trainer:168 RmsProp 48 loss=13391.672852 err=13247.181641
+I 2015-05-27 16:27:36 theanets.trainer:168 RmsProp 49 loss=13340.203125 err=13195.237305
+I 2015-05-27 16:28:16 theanets.trainer:168 RmsProp 50 loss=13276.384766 err=13132.130859
+I 2015-05-27 16:28:16 theanets.trainer:168 validation 5 loss=14306.504883 err=14161.245117
+I 2015-05-27 16:28:56 theanets.trainer:168 RmsProp 51 loss=13373.936523 err=13228.669922
+I 2015-05-27 16:29:35 theanets.trainer:168 RmsProp 52 loss=13333.058594 err=13188.149414
+I 2015-05-27 16:30:13 theanets.trainer:168 RmsProp 53 loss=13317.177734 err=13173.458984
+I 2015-05-27 16:30:52 theanets.trainer:168 RmsProp 54 loss=13365.803711 err=13221.029297
+I 2015-05-27 16:31:31 theanets.trainer:168 RmsProp 55 loss=13335.302734 err=13189.698242
+I 2015-05-27 16:32:09 theanets.trainer:168 RmsProp 56 loss=13242.291992 err=13097.091797
+I 2015-05-27 16:32:46 theanets.trainer:168 RmsProp 57 loss=13480.375977 err=13334.268555
+I 2015-05-27 16:33:24 theanets.trainer:168 RmsProp 58 loss=13286.712891 err=13138.342773
+I 2015-05-27 16:34:02 theanets.trainer:168 RmsProp 59 loss=13400.893555 err=13254.076172
+I 2015-05-27 16:34:39 theanets.trainer:168 RmsProp 60 loss=13283.942383 err=13138.659180
+I 2015-05-27 16:34:40 theanets.trainer:168 validation 6 loss=14300.516602 err=14160.081055
+I 2015-05-27 16:34:40 theanets.trainer:252 patience elapsed!
+I 2015-05-27 16:34:40 theanets.dataset:133 valid: 2 mini-batches from callable
+I 2015-05-27 16:34:40 theanets.dataset:133 train: 10 mini-batches from callable
+I 2015-05-27 16:34:40 theanets.main:87 creating trainer <class 'theanets.trainer.RmsProp'>
+I 2015-05-27 16:34:40 theanets.main:89 --algorithms = rmsprop
+I 2015-05-27 16:34:40 theanets.main:89 --batch_size = 1024
+I 2015-05-27 16:34:40 theanets.main:89 --gradient_clip = 100000.0
+I 2015-05-27 16:34:40 theanets.main:89 --hidden_l1 = None
+I 2015-05-27 16:34:40 theanets.main:89 --learning_rate = 0.0001
+I 2015-05-27 16:34:40 theanets.main:89 --train_batches = 10
+I 2015-05-27 16:34:40 theanets.main:89 --valid_batches = 2
+I 2015-05-27 16:34:40 theanets.main:89 --weight_l1 = 0.1
+I 2015-05-27 16:34:40 theanets.main:89 --weight_l2 = 0.01
+I 2015-05-27 16:34:40 theanets.trainer:134 compiling evaluation function
+I 2015-05-27 16:34:50 theanets.trainer:294 compiling RmsProp learning function
+I 2015-05-27 16:36:48 theanets.trainer:168 validation 0 loss=7709.577637 err=7578.386230 *
+I 2015-05-27 16:37:00 theanets.trainer:168 RmsProp 1 loss=7273.927246 err=7186.956055
+I 2015-05-27 16:37:13 theanets.trainer:168 RmsProp 2 loss=7426.104492 err=7363.688965
+I 2015-05-27 16:37:27 theanets.trainer:168 RmsProp 3 loss=7440.913086 err=7400.743164
+I 2015-05-27 16:37:40 theanets.trainer:168 RmsProp 4 loss=7334.161621 err=7307.243652
+I 2015-05-27 16:37:52 theanets.trainer:168 RmsProp 5 loss=7231.122559 err=7211.628906
+I 2015-05-27 16:38:04 theanets.trainer:168 RmsProp 6 loss=7408.790039 err=7392.054688
+I 2015-05-27 16:38:15 theanets.trainer:168 RmsProp 7 loss=7302.415039 err=7286.856934
+I 2015-05-27 16:38:25 theanets.trainer:168 RmsProp 8 loss=7269.456055 err=7255.089844
+I 2015-05-27 16:38:35 theanets.trainer:168 RmsProp 9 loss=7365.604492 err=7350.585938
+I 2015-05-27 16:38:46 theanets.trainer:168 RmsProp 10 loss=7329.353027 err=7315.134277
+I 2015-05-27 16:38:47 theanets.trainer:168 validation 1 loss=7585.792480 err=7570.114258 *
+I 2015-05-27 16:38:58 theanets.trainer:168 RmsProp 11 loss=7270.441406 err=7255.941406
+I 2015-05-27 16:39:10 theanets.trainer:168 RmsProp 12 loss=7288.025879 err=7273.528320
+I 2015-05-27 16:39:21 theanets.trainer:168 RmsProp 13 loss=7412.035156 err=7397.588867
+I 2015-05-27 16:39:33 theanets.trainer:168 RmsProp 14 loss=7321.427246 err=7306.956055
+I 2015-05-27 16:39:45 theanets.trainer:168 RmsProp 15 loss=7339.450684 err=7325.171875
+I 2015-05-27 16:39:56 theanets.trainer:168 RmsProp 16 loss=7279.162598 err=7264.557129
+I 2015-05-27 16:40:08 theanets.trainer:168 RmsProp 17 loss=7149.991211 err=7135.817383
+I 2015-05-27 16:40:20 theanets.trainer:168 RmsProp 18 loss=7301.277344 err=7286.512695
+I 2015-05-27 16:40:32 theanets.trainer:168 RmsProp 19 loss=7398.676758 err=7384.314941
+I 2015-05-27 16:40:43 theanets.trainer:168 RmsProp 20 loss=7345.162598 err=7330.817871
+I 2015-05-27 16:40:44 theanets.trainer:168 validation 2 loss=7585.507812 err=7569.682129 *
+I 2015-05-27 16:40:56 theanets.trainer:168 RmsProp 21 loss=7316.649902 err=7301.742188
+I 2015-05-27 16:41:07 theanets.trainer:168 RmsProp 22 loss=7300.721191 err=7286.515625
+I 2015-05-27 16:41:19 theanets.trainer:168 RmsProp 23 loss=7392.934570 err=7378.178711
+I 2015-05-27 16:41:30 theanets.trainer:168 RmsProp 24 loss=7420.644531 err=7406.389160
+I 2015-05-27 16:41:41 theanets.trainer:168 RmsProp 25 loss=7390.174316 err=7375.296875
+I 2015-05-27 16:41:53 theanets.trainer:168 RmsProp 26 loss=7303.975098 err=7289.699219
+I 2015-05-27 16:42:05 theanets.trainer:168 RmsProp 27 loss=7373.541504 err=7358.781250
+I 2015-05-27 16:42:16 theanets.trainer:168 RmsProp 28 loss=7401.975098 err=7387.323242
+I 2015-05-27 16:42:28 theanets.trainer:168 RmsProp 29 loss=7324.622559 err=7310.068848
+I 2015-05-27 16:42:40 theanets.trainer:168 RmsProp 30 loss=7335.282227 err=7320.377930
+I 2015-05-27 16:42:40 theanets.trainer:168 validation 3 loss=7583.137207 err=7569.050781 *
+I 2015-05-27 16:42:52 theanets.trainer:168 RmsProp 31 loss=7278.582031 err=7264.153320
+I 2015-05-27 16:43:03 theanets.trainer:168 RmsProp 32 loss=7379.761719 err=7364.960938
+I 2015-05-27 16:43:15 theanets.trainer:168 RmsProp 33 loss=7379.405273 err=7364.790527
+I 2015-05-27 16:43:27 theanets.trainer:168 RmsProp 34 loss=7259.239746 err=7244.247070
+I 2015-05-27 16:43:38 theanets.trainer:168 RmsProp 35 loss=7352.275879 err=7337.578125
+I 2015-05-27 16:43:51 theanets.trainer:168 RmsProp 36 loss=7360.109375 err=7345.475586
+I 2015-05-27 16:44:03 theanets.trainer:168 RmsProp 37 loss=7207.881836 err=7192.841309
+I 2015-05-27 16:44:14 theanets.trainer:168 RmsProp 38 loss=7383.645996 err=7369.242188
+I 2015-05-27 16:44:26 theanets.trainer:168 RmsProp 39 loss=7367.309570 err=7352.110840
+I 2015-05-27 16:44:38 theanets.trainer:168 RmsProp 40 loss=7211.823242 err=7197.360840
+I 2015-05-27 16:44:38 theanets.trainer:168 validation 4 loss=7584.742188 err=7570.232910
+I 2015-05-27 16:44:50 theanets.trainer:168 RmsProp 41 loss=7391.622559 err=7376.666504
+I 2015-05-27 16:45:02 theanets.trainer:168 RmsProp 42 loss=7417.485352 err=7402.604492
+I 2015-05-27 16:45:14 theanets.trainer:168 RmsProp 43 loss=7326.265625 err=7311.424316
+I 2015-05-27 16:45:26 theanets.trainer:168 RmsProp 44 loss=7259.952148 err=7245.067383
+I 2015-05-27 16:45:38 theanets.trainer:168 RmsProp 45 loss=7394.037598 err=7379.415527
+I 2015-05-27 16:45:50 theanets.trainer:168 RmsProp 46 loss=7291.940430 err=7276.579590
+I 2015-05-27 16:46:02 theanets.trainer:168 RmsProp 47 loss=7223.940430 err=7209.394531
+I 2015-05-27 16:46:13 theanets.trainer:168 RmsProp 48 loss=7239.379883 err=7224.154785
+I 2015-05-27 16:46:25 theanets.trainer:168 RmsProp 49 loss=7342.153809 err=7327.243652
+I 2015-05-27 16:46:37 theanets.trainer:168 RmsProp 50 loss=7359.711914 err=7344.895996
+I 2015-05-27 16:46:38 theanets.trainer:168 validation 5 loss=7585.654297 err=7569.278320
+I 2015-05-27 16:46:49 theanets.trainer:168 RmsProp 51 loss=7285.666504 err=7270.458008
+I 2015-05-27 16:47:01 theanets.trainer:168 RmsProp 52 loss=7277.999023 err=7263.279785
+I 2015-05-27 16:47:13 theanets.trainer:168 RmsProp 53 loss=7272.317383 err=7257.164062
+I 2015-05-27 16:47:25 theanets.trainer:168 RmsProp 54 loss=7304.928223 err=7290.092285
+I 2015-05-27 16:47:37 theanets.trainer:168 RmsProp 55 loss=7291.649414 err=7276.443848
+I 2015-05-27 16:47:49 theanets.trainer:168 RmsProp 56 loss=7322.712402 err=7307.860352
+I 2015-05-27 16:48:01 theanets.trainer:168 RmsProp 57 loss=7419.151367 err=7404.067871
+I 2015-05-27 16:48:13 theanets.trainer:168 RmsProp 58 loss=7306.424805 err=7291.123535
+I 2015-05-27 16:48:24 theanets.trainer:168 RmsProp 59 loss=7363.540039 err=7348.723633
+I 2015-05-27 16:48:36 theanets.trainer:168 RmsProp 60 loss=7273.550781 err=7258.116211
+I 2015-05-27 16:48:37 theanets.trainer:168 validation 6 loss=7584.761719 err=7569.247070
+I 2015-05-27 16:48:48 theanets.trainer:168 RmsProp 61 loss=7282.825684 err=7267.815430
+I 2015-05-27 16:49:00 theanets.trainer:168 RmsProp 62 loss=7262.728027 err=7247.608398
+I 2015-05-27 16:49:12 theanets.trainer:168 RmsProp 63 loss=7275.877930 err=7260.563477
+I 2015-05-27 16:49:23 theanets.trainer:168 RmsProp 64 loss=7357.792969 err=7342.739258
+I 2015-05-27 16:49:35 theanets.trainer:168 RmsProp 65 loss=7150.962402 err=7135.548340
+I 2015-05-27 16:49:47 theanets.trainer:168 RmsProp 66 loss=7227.028320 err=7212.041504
+I 2015-05-27 16:49:59 theanets.trainer:168 RmsProp 67 loss=7310.174805 err=7294.655273
+I 2015-05-27 16:50:11 theanets.trainer:168 RmsProp 68 loss=7433.321777 err=7418.286621
+I 2015-05-27 16:50:22 theanets.trainer:168 RmsProp 69 loss=7301.905273 err=7286.486816
+I 2015-05-27 16:50:34 theanets.trainer:168 RmsProp 70 loss=7316.973633 err=7301.482910
+I 2015-05-27 16:50:34 theanets.trainer:168 validation 7 loss=7582.769043 err=7569.020996 *
+I 2015-05-27 16:50:46 theanets.trainer:168 RmsProp 71 loss=7325.979004 err=7310.876465
+I 2015-05-27 16:50:58 theanets.trainer:168 RmsProp 72 loss=7337.280273 err=7321.677246
+I 2015-05-27 16:51:10 theanets.trainer:168 RmsProp 73 loss=7271.618652 err=7256.512695
+I 2015-05-27 16:51:22 theanets.trainer:168 RmsProp 74 loss=7358.783691 err=7343.353027
+I 2015-05-27 16:51:34 theanets.trainer:168 RmsProp 75 loss=7438.217285 err=7422.913086
+I 2015-05-27 16:51:46 theanets.trainer:168 RmsProp 76 loss=7374.003906 err=7358.541992
+I 2015-05-27 16:51:58 theanets.trainer:168 RmsProp 77 loss=7289.676758 err=7274.196777
+I 2015-05-27 16:52:10 theanets.trainer:168 RmsProp 78 loss=7343.297852 err=7328.034180
+I 2015-05-27 16:52:22 theanets.trainer:168 RmsProp 79 loss=7275.670410 err=7259.989746
+I 2015-05-27 16:52:33 theanets.trainer:168 RmsProp 80 loss=7341.125000 err=7326.153320
+I 2015-05-27 16:52:34 theanets.trainer:168 validation 8 loss=7585.941406 err=7569.543945
+I 2015-05-27 16:52:43 theanets.trainer:168 RmsProp 81 loss=7277.979492 err=7262.257812
+I 2015-05-27 16:52:51 theanets.trainer:168 RmsProp 82 loss=7310.698242 err=7295.413086
+I 2015-05-27 16:53:00 theanets.trainer:168 RmsProp 83 loss=7378.009277 err=7362.560059
+I 2015-05-27 16:53:08 theanets.trainer:168 RmsProp 84 loss=7292.032715 err=7276.520508
+I 2015-05-27 16:53:16 theanets.trainer:168 RmsProp 85 loss=7304.744629 err=7289.454590
+I 2015-05-27 16:53:24 theanets.trainer:168 RmsProp 86 loss=7292.619629 err=7277.104004
+I 2015-05-27 16:53:32 theanets.trainer:168 RmsProp 87 loss=7321.198242 err=7305.997070
+I 2015-05-27 16:53:41 theanets.trainer:168 RmsProp 88 loss=7370.025879 err=7354.388184
+I 2015-05-27 16:53:49 theanets.trainer:168 RmsProp 89 loss=7378.463379 err=7363.209473
+I 2015-05-27 16:53:57 theanets.trainer:168 RmsProp 90 loss=7312.803711 err=7297.232910
+I 2015-05-27 16:53:58 theanets.trainer:168 validation 9 loss=7585.800293 err=7569.595215
+I 2015-05-27 16:54:06 theanets.trainer:168 RmsProp 91 loss=7311.844727 err=7296.311035
+I 2015-05-27 16:54:15 theanets.trainer:168 RmsProp 92 loss=7352.110840 err=7336.917969
+I 2015-05-27 16:54:23 theanets.trainer:168 RmsProp 93 loss=7227.182129 err=7211.459473
+I 2015-05-27 16:54:31 theanets.trainer:168 RmsProp 94 loss=7329.713867 err=7314.500000
+I 2015-05-27 16:54:40 theanets.trainer:168 RmsProp 95 loss=7322.462402 err=7306.889648
+I 2015-05-27 16:54:47 theanets.trainer:168 RmsProp 96 loss=7253.854492 err=7238.587402
+I 2015-05-27 16:54:54 theanets.trainer:168 RmsProp 97 loss=7400.395996 err=7384.809570
+I 2015-05-27 16:55:02 theanets.trainer:168 RmsProp 98 loss=7343.093750 err=7327.730469
+I 2015-05-27 16:55:10 theanets.trainer:168 RmsProp 99 loss=7270.190430 err=7254.813965
+I 2015-05-27 16:55:18 theanets.trainer:168 RmsProp 100 loss=7266.442383 err=7250.811035
+I 2015-05-27 16:55:18 theanets.trainer:168 validation 10 loss=7584.255859 err=7569.015625
+I 2015-05-27 16:55:25 theanets.trainer:168 RmsProp 101 loss=7269.954590 err=7254.826660
+I 2015-05-27 16:55:33 theanets.trainer:168 RmsProp 102 loss=7304.008789 err=7288.335938
+I 2015-05-27 16:55:40 theanets.trainer:168 RmsProp 103 loss=7225.920410 err=7210.622559
+I 2015-05-27 16:55:48 theanets.trainer:168 RmsProp 104 loss=7284.001465 err=7268.563965
+I 2015-05-27 16:55:55 theanets.trainer:168 RmsProp 105 loss=7360.897461 err=7345.355469
+I 2015-05-27 16:56:03 theanets.trainer:168 RmsProp 106 loss=7232.896973 err=7217.540039
+I 2015-05-27 16:56:11 theanets.trainer:168 RmsProp 107 loss=7149.280273 err=7133.640625
+I 2015-05-27 16:56:18 theanets.trainer:168 RmsProp 108 loss=7339.393555 err=7324.208008
+I 2015-05-27 16:56:25 theanets.trainer:168 RmsProp 109 loss=7294.339844 err=7278.614258
+I 2015-05-27 16:56:32 theanets.trainer:168 RmsProp 110 loss=7354.811523 err=7339.604004
+I 2015-05-27 16:56:33 theanets.trainer:168 validation 11 loss=7584.576172 err=7569.018066
+I 2015-05-27 16:56:39 theanets.trainer:168 RmsProp 111 loss=7239.116211 err=7223.428223
+I 2015-05-27 16:56:45 theanets.trainer:168 RmsProp 112 loss=7318.653809 err=7303.070312
+I 2015-05-27 16:56:52 theanets.trainer:168 RmsProp 113 loss=7427.725586 err=7412.390625
+I 2015-05-27 16:56:58 theanets.trainer:168 RmsProp 114 loss=7312.324219 err=7296.514160
+I 2015-05-27 16:57:04 theanets.trainer:168 RmsProp 115 loss=7323.795410 err=7308.485840
+I 2015-05-27 16:57:10 theanets.trainer:168 RmsProp 116 loss=7251.649902 err=7235.990723
+I 2015-05-27 16:57:16 theanets.trainer:168 RmsProp 117 loss=7268.414062 err=7252.926758
+I 2015-05-27 16:57:23 theanets.trainer:168 RmsProp 118 loss=7314.643555 err=7298.937500
+I 2015-05-27 16:57:30 theanets.trainer:168 RmsProp 119 loss=7296.919434 err=7281.298340
+I 2015-05-27 16:57:36 theanets.trainer:168 RmsProp 120 loss=7258.494629 err=7243.016602
+I 2015-05-27 16:57:37 theanets.trainer:168 validation 12 loss=7585.395020 err=7568.911133
+I 2015-05-27 16:57:37 theanets.trainer:252 patience elapsed!
+I 2015-05-27 16:57:37 theanets.main:237 models_deep_post_code_sep/95112-models-sep_san_jose_realtor_200_100.conf-1024-None-0.1-0.01.pkl: saving model
+I 2015-05-27 16:57:37 theanets.graph:477 models_deep_post_code_sep/95112-models-sep_san_jose_realtor_200_100.conf-1024-None-0.1-0.01.pkl: saved model parameters
