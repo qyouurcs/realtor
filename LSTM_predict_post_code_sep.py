@@ -93,8 +93,11 @@ if __name__ == '__main__':
     if pred_dir[-1] == '/':
         pred_dir = pred_dir[0:-1]
 
-    save_fn = pred_dir.replace('/','') + '_' + os.path.splitext(os.path.basename(model_fn))[0] + '_pred.txt'
+    save_fn = os.path.splitext(os.path.basename(model_fn))[0] + '_pred.txt'
     save_fn = os.path.join(save_dir, save_fn)
+    if os.path.exists(save_fn):
+        print 'Existed {0}, ignore'.format(save_fn)
+        sys.exit()
 
     dict_pred_ys_all = {}
     dict_y_all = {}

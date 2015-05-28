@@ -1,6 +1,6 @@
 #/usr/bin/env bash
 
-param="hidden_l1=0.01 l1=0.001 l2=0.001"
+param="l1=1.0 l2=0.5"
 conf_fn="sep_san_jose_realtor_200_100.conf"
 post_sep="Batches-San-Jose-train-deep-post-code-sep-1024"
 val_dir="Batches-San-Jose-test-deep-post-code-sep-1024"

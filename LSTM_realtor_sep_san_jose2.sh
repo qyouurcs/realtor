@@ -1,7 +1,7 @@
 #/usr/bin/env bash
 
-param="l1=0.01 l2=0.001"
-conf_fn="sep_san_jose_realtor_200_100.conf"
+param="l1=0.1 l2=0.01"
+conf_fn="sep_san_jose_realtor_300_100.conf"
 post_sep="Batches-San-Jose-train-deep-post-code-sep-1024"
 val_dir="Batches-San-Jose-test-deep-post-code-sep-1024"
 

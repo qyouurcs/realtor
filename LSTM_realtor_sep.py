@@ -111,7 +111,7 @@ def main(layer_nums, data_dir, model_dir, val_fn, sep_data_dir, sep_val_fn, **kw
     e.train(batch_train_sep,
             batch_val_sep,
             algorithms = 'rmsprop',
-            learning_rate = 0.0001,
+            learning_rate = 0.00001,
             gradient_clip = 1e5,
             train_batches = 10,
             valid_batches = 2,

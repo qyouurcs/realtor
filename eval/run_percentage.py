@@ -40,7 +40,7 @@ if __name__ == '__main__':
                 best_diff = float(parts[2]) - float(parts[1])
                 avg_diff = float(parts[3]) - float(parts[1])
                 price = dict_id_price[int(parts[0])]
-                print >>wfid, parts[0], best_diff / price, avg_diff/price, price, best_diff, avg_diff,
+                print >>wfid, parts[0], abs(best_diff) / price, abs(avg_diff)/price, price, best_diff, avg_diff
         wfid.close()
 
         print 'Done with {0}'.format(os.path.join(save_dir, os.path.basename(fn)))
