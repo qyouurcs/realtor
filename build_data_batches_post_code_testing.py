@@ -51,7 +51,6 @@ if __name__ == '__main__':
             dict_price[parts[0]] = float(parts[1]) - float(parts[2])
             idx += 1
 
-    pdb.set_trace()
     T = -1
     fea_num = -1
     dict_fea = {}
