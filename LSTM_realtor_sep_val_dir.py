@@ -19,7 +19,7 @@ logging = climate.get_logger('lstm-chime')
 
 climate.enable_default_logging()
 
-def main(layer_nums, data_dir, model_dir, val_fn, sep_data_dir, sep_val_fn, **kwargs):
+def main(layer_nums, data_dir, model_dir, val_dir, sep_data_dir, sep_val_dir, **kwargs):
     
     layer_nums = [ int(num) for num in layer_nums ]
 
@@ -39,19 +39,22 @@ def main(layer_nums, data_dir, model_dir, val_fn, sep_data_dir, sep_val_fn, **kw
     def batch_train():
         batches = glob.glob(data_dir + '/*')
         num_ = len(batches)
-        idx = random.choice(range(1,num_))
+        idx = random.choice(range(num_))
         data = np.load( os.path.join(data_dir, 'batch-{0}.npz'.format(idx)))
         
         return [ data['batch_x'], data['batch_y'] ]
     
     def batch_val():
-        data = np.load(val_fn)
+        batches = glob.glob(val_dir + '/*')
+        num_ = len(batches)
+        idx = random.choice(range(num_))
+        data = np.load( os.path.join(val_dir, 'batch-{0}.npz'.format(idx)))
         return [ data['batch_x'], data['batch_y'] ]
     
     def batch_train_sep():
         batches = glob.glob(sep_data_dir + '/*')
         num_ = len(batches)
-        idx = random.choice(range(1,num_))
+        idx = random.choice(range(num_))
         data = np.load( os.path.join(sep_data_dir, 'batch-{0}.npz'.format(idx)))
         return [ data['batch_x'], data['batch_y'] ]
     
@@ -61,9 +64,13 @@ def main(layer_nums, data_dir, model_dir, val_fn, sep_data_dir, sep_val_fn, **kw
         return os.path.basename(sep_data_dir)
 
     def batch_val_sep():
-        data = np.load(sep_val_fn)
+
+        batches = glob.glob(sep_val_dir + '/*')
+        num_ = len(batches)
+        idx = random.choice(range(num_))
+        data = np.load( os.path.join(sep_val_dir, 'batch-{0}.npz'.format(idx)))
         return [ data['batch_x'], data['batch_y'] ]
-    
+ 
     def fea_num():
         data = np.load(os.path.join(data_dir, 'batch-0.npz'))
         return data['fea_num']
@@ -89,7 +96,6 @@ def main(layer_nums, data_dir, model_dir, val_fn, sep_data_dir, sep_val_fn, **kw
     )
     
     layer_str = sys.argv[1].replace(',','-')
-    #val_base = os.path.splitext(os.path.basename(val_fn))[0]
     if not os.path.isdir(model_dir):
         os.makedirs(model_dir)
     save_fn = os.path.join(model_dir, '{5}-models-{0}-{1}-{2}-{3}-{4}.pkl'.format(layer_str, batch_size_v, hidden_l1, l1, l2, get_area_code()))
@@ -127,17 +133,17 @@ if __name__ == '__main__':
     cf = ConfigParser.ConfigParser()
     
     if len(sys.argv) < 4:
-        print 'Usage: {0} <conf_fn> <sep_data_dir> <sep_val_fn> [hidden_l1 or l1 or l2]'.format(sys.argv[0])
+        print 'Usage: {0} <conf_fn> <sep_data_dir> <sep_val_dir> [hidden_l1 or l1 or l2]'.format(sys.argv[0])
         sys.exit()
     
     cf.read(sys.argv[1])
     layer_nums=cf.get('INPUT', 'layer_nums').split(',')
     data_dir=cf.get('INPUT', 'data_dir')
-    val_fn=cf.get('INPUT', 'val_fn')
+    val_dir=cf.get('INPUT', 'val_dir')
     model_dir=cf.get('OUTPUT','model_dir')
 
     sep_data_dir = sys.argv[2]
-    sep_val_fn = sys.argv[3]
+    sep_val_dir = sys.argv[3]
 
     idx_s = 4
     if len(sys.argv) > 5:
@@ -145,5 +151,5 @@ if __name__ == '__main__':
             idx_s = 5
 
     kwargs = dict(x.split('=', 1) for x in sys.argv[idx_s:])
-    main(layer_nums, data_dir, model_dir, val_fn, sep_data_dir, sep_val_fn, **kwargs)
+    main(layer_nums, data_dir, model_dir, val_dir, sep_data_dir, sep_val_dir, **kwargs)
 

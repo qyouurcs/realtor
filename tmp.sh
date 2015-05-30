@@ -1,3 +1,3 @@
-sh  LSTM_realtor_sep_san_jose_200_100_avg.sh
-sh  LSTM_realtor_sep_san_jose_300_100_avg.sh
-sh  LSTM_realtor_sep_san_jose_100_100_avg.sh
+sh LSTM_realtor_sep_san_jose_200_200_val_dir.sh
+sh LSTM_realtor_sep_san_jose_200_val_dir.sh
+sh LSTM_realtor_sep_san_jose_300_val_dir.sh
