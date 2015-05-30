@@ -1,3 +1,2 @@
-sh LSTM_realtor_sep_san_jose_200_200_val_dir.sh
-sh LSTM_realtor_sep_san_jose_200_val_dir.sh
-sh LSTM_realtor_sep_san_jose_300_val_dir.sh
+sh LSTM_realtor_sep_san_jose_100_50_val_dir.sh
+sh LSTM_realtor_sep_san_jose_50_50_val_dir.sh
