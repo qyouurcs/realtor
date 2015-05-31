@@ -1,11 +1,11 @@
 #/usr/bin/env bash
 
-param="l1=0.001 l2=0.0001"
-conf_fn="sep_san_jose_realtor_200_100_val_dir_high_low.conf"
-post_sep="Batches-San-Jose-train-deep-post-code-high-low-sep-1024"
-val_dir="Batches-San-Jose-train-deep-post-code-high-low-sep-1024"
+param="l1=0.1 l2=0.01"
+conf_fn="sep_san_jose_realtor_200_100.conf"
+post_sep="Batches-San-Jose-train-deep-post-code-sep-1024"
+val_dir="Batches-San-Jose-test-deep-post-code-sep-1024"
 
-log_dir="log_sep_val_dir_high_low"
+log_dir="log_sep_200_100"
 
 area_code=`ls $post_sep`
 
@@ -26,8 +26,8 @@ do
     idx=`echo $idx" + 1" | bc`
     
     if [ $idx -eq $area_cnt ]; then
-        THEANO_FLAGS="device=gpu$gpu" python LSTM_realtor_sep_val_dir.py $conf_fn $code_dir $val_fn $param > ${log_dir}/${conf}_${code}_${param_s}.log &
+        THEANO_FLAGS="device=gpu$gpu" python LSTM_realtor_sep.py $conf_fn $code_dir $val_fn $param > ${log_dir}/${conf}_${code}_${param_s}.log &
     else
-        THEANO_FLAGS="device=gpu$gpu" python LSTM_realtor_sep_val_dir.py $conf_fn $code_dir $val_fn $param > ${log_dir}/${conf}_${code}_${param_s}.log &
+        THEANO_FLAGS="device=gpu$gpu" python LSTM_realtor_sep.py $conf_fn $code_dir $val_fn $param > ${log_dir}/${conf}_${code}_${param_s}.log &
     fi
 done
